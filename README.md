@@ -10,8 +10,3 @@ Open `index.html` in your browser. No build tools required.
 
 This is a static site. Deploy to GitHub Pages, Vercel, Netlify, or any static host.
 
-To enable GitHub Pages:
-1. Go to repo Settings → Pages
-2. Set source to "Deploy from a branch"
-3. Select `master` branch, `/ (root)` folder
-4. Save
