@@ -84,6 +84,12 @@ img { max-width: 100%; height: auto; }
     color: var(--primary-light);
 }
 
+.logo-icon-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
@@ -224,7 +230,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .hero-highlight {
-    background: linear-gradient(135deg, var(--primary-light), var(--accent));
+    background: linear-gradient(90deg, #9b30ff, #7b68ee, #48d1a0, #3ddc84);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

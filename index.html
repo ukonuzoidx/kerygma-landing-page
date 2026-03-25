@@ -9,14 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝</text></svg>">
+    <link rel="icon" href="app_logo.jpeg">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <span class="logo-icon">✝</span>
+                <img src="app_logo.jpeg" alt="Kerygma logo" class="logo-icon-img">
                 Kerygma
             </a>
             <div class="nav-links">
@@ -112,7 +112,7 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Built for real church services</h2>
+                <h2 class="section-title">Designed for Sunday services</h2>
                 <p class="section-subtitle">Every feature designed by and for church media teams who need reliability on Sunday morning.</p>
             </div>
             <div class="features-grid">
@@ -123,13 +123,13 @@
                     <h3>Dual-Path Detection</h3>
                     <p>Fast regex catches explicit references like "Romans 8:28" in under 600ms. A local LLM detects thematic allusions like "all things work together" in parallel.</p>
                 </div>
-                <div class="feature-card">
+                <!-- <div class="feature-card">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
                     <h3>Zero Hallucinations</h3>
                     <p>Every AI-detected reference is validated against a real Bible database before display. If it's not a real verse, it never reaches your screen.</p>
-                </div>
+                </div> -->
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
@@ -142,7 +142,14 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                     </div>
                     <h3>Compact Overlay</h3>
-                    <p>Toggle an always-on-top transparent overlay showing recent scripture detections. Perfect for second screens or projector setups.</p>
+                    <p>Toggle an always-on-top transparent overlay showing recent scripture detections. Perfect for second screens, projector setups, or as a browser source in OBS.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3>OBS &amp; Streaming Ready</h3>
+                    <p>Works seamlessly with OBS Studio and any streaming software that supports browser overlays. Add detected scriptures directly to your livestream in real time.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -346,7 +353,7 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
-                <span class="logo-icon">✝</span> Kerygma
+                <img src="app_logo.jpeg" alt="Kerygma logo" class="logo-icon-img"> Kerygma
                 <p>Real-time AI scripture detection for live sermons.</p>
             </div>
             <div class="footer-links">
