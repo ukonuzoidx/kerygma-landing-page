@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerygma — Real-Time AI Scripture Detection for Live Sermons</title>
+    <meta name="description" content="Kerygma automatically detects Bible verses spoken during live sermons and displays them instantly. AI-powered scripture recognition for churches.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">✝</span>
+                Kerygma
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#demo">Demo</a>
+                <a href="#download" class="btn btn-nav">Download Free</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <div class="hero-badge">Free &amp; Open Source</div>
+            <h1 class="hero-title">
+                Every verse your pastor speaks,<br>
+                <span class="hero-highlight">instantly on screen.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Kerygma listens to live sermons and automatically detects Bible references — both explicit quotes and thematic allusions — displaying them in real time for church operators.
+            </p>
+            <div class="hero-actions">
+                <a href="#download" class="btn btn-primary btn-lg">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download for Windows
+                </a>
+                <a href="#how-it-works" class="btn btn-ghost btn-lg">See How It Works</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">&lt;600ms</span>
+                    <span class="stat-label">Detection Speed</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">Dual AI</span>
+                    <span class="stat-label">Fast + Smart Paths</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Free Forever</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-mockup">
+            <div class="mockup-window">
+                <div class="mockup-titlebar">
+                    <div class="mockup-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="mockup-title">Kerygma — Live Session</span>
+                </div>
+                <div class="mockup-body">
+                    <div class="mockup-transcript">
+                        <div class="mockup-transcript-label">Live Transcript</div>
+                        <p class="mockup-text typing" id="mockup-text">
+                            "And we know that all things work together for good to them that love God..."
+                        </p>
+                    </div>
+                    <div class="mockup-cards">
+                        <div class="mockup-card detected">
+                            <div class="mockup-card-header">
+                                <span class="mockup-ref">Romans 8:28</span>
+                                <span class="mockup-badge high">98% match</span>
+                            </div>
+                            <p class="mockup-verse">"And we know that all things work together for good to them that love God, to them who are the called according to his purpose."</p>
+                            <div class="mockup-card-actions">
+                                <button class="mockup-btn confirm">✓ Confirm</button>
+                                <button class="mockup-btn copy">Copy</button>
+                                <button class="mockup-btn pin">Pin</button>
+                            </div>
+                        </div>
+                        <div class="mockup-card">
+                            <div class="mockup-card-header">
+                                <span class="mockup-ref">Jeremiah 29:11</span>
+                                <span class="mockup-badge medium">73% match</span>
+                            </div>
+                            <p class="mockup-verse">"For I know the thoughts that I think toward you, saith the LORD, thoughts of peace..."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Built for real church services</h2>
+                <p class="section-subtitle">Every feature designed by and for church media teams who need reliability on Sunday morning.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h3>Dual-Path Detection</h3>
+                    <p>Fast regex catches explicit references like "Romans 8:28" in under 600ms. A local LLM detects thematic allusions like "all things work together" in parallel.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Zero Hallucinations</h3>
+                    <p>Every AI-detected reference is validated against a real Bible database before display. If it's not a real verse, it never reaches your screen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                    </div>
+                    <h3>Accent-Aware</h3>
+                    <p>Powered by Whisper with Nigerian English accent tuning. Works with diverse speaking styles and accents from around the world.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Compact Overlay</h3>
+                    <p>Toggle an always-on-top transparent overlay showing recent scripture detections. Perfect for second screens or projector setups.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                    </div>
+                    <h3>Multiple Translations</h3>
+                    <p>Ships with KJV. Drop in EasyWorship Bible files for NIV, ESV, NKJV, and more — they're instantly available.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <h3>Operator Controls</h3>
+                    <p>Confirm, dismiss, copy, or pin each detection. Your team stays in control — AI suggests, humans decide what goes on screen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How it works</h2>
+                <p class="section-subtitle">From spoken word to displayed scripture in under a second.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Listen</h3>
+                        <p>Kerygma captures audio from your computer's microphone or audio interface. Whisper AI transcribes speech in real-time with high accuracy.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="audio-wave">
+                            <span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Detect</h3>
+                        <p>Two AI paths run simultaneously — a fast regex parser spots explicit references instantly, while a local LLM identifies thematic quotes and allusions.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="detect-paths">
+                            <div class="path fast">
+                                <span class="path-label">Fast Path</span>
+                                <span class="path-time">&lt;600ms</span>
+                            </div>
+                            <div class="path smart">
+                                <span class="path-label">Smart Path</span>
+                                <span class="path-time">~5s</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Validate</h3>
+                        <p>Every detected reference is checked against a real Bible database. No hallucinations, no made-up verses — only verified scripture reaches your operator.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="validate-check">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Display</h3>
+                        <p>Verified verses appear as cards in the desktop app. Operators can confirm, copy to clipboard, pin important verses, or dismiss false positives.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="display-cards">
+                            <div class="mini-card">Romans 8:28 ✓</div>
+                            <div class="mini-card">John 3:16 ✓</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo/Screenshot Section -->
+    <section class="demo" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">See it in action</h2>
+                <p class="section-subtitle">A desktop-native app built for reliability. No internet required — everything runs locally on your church computer.</p>
+            </div>
+            <div class="demo-showcase">
+                <div class="demo-window">
+                    <div class="demo-titlebar">
+                        <div class="demo-dots"><span></span><span></span><span></span></div>
+                        <span>Kerygma v2.0</span>
+                    </div>
+                    <div class="demo-body">
+                        <div class="demo-sidebar">
+                            <div class="demo-sidebar-item active">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                                Live Session
+                            </div>
+                            <div class="demo-sidebar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                                History
+                            </div>
+                            <div class="demo-sidebar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.32 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                                Settings
+                            </div>
+                        </div>
+                        <div class="demo-main">
+                            <div class="demo-status">
+                                <span class="status-dot live"></span>
+                                Listening — Microphone Active
+                            </div>
+                            <div class="demo-transcript-area">
+                                <p>"Brothers and sisters, I want you to know today that <em>God so loved the world that He gave His only begotten Son</em>, and through that sacrifice we find our hope..."</p>
+                            </div>
+                            <div class="demo-detections">
+                                <div class="demo-detection">
+                                    <div class="detection-header">
+                                        <span class="detection-ref">John 3:16</span>
+                                        <span class="detection-method">Fast Path</span>
+                                        <span class="detection-confidence high">98%</span>
+                                    </div>
+                                    <p>"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Section -->
+    <section class="tech">
+        <div class="container">
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">🔒</div>
+                    <h4>100% Local</h4>
+                    <p>No cloud, no internet needed. Audio never leaves your church computer. Complete privacy for your congregation.</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">⚡</div>
+                    <h4>GPU Accelerated</h4>
+                    <p>Leverages NVIDIA CUDA for fast transcription and inference. Falls back gracefully to CPU if no GPU is available.</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🆓</div>
+                    <h4>Free &amp; Open Source</h4>
+                    <p>No subscriptions, no license fees. Built for the church, by the church. View the source on GitHub.</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">💻</div>
+                    <h4>Windows Native</h4>
+                    <p>A proper desktop app — not a browser tab. Fast startup, low memory, runs alongside your presentation software.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download" id="download">
+        <div class="container">
+            <div class="download-card">
+                <h2>Ready to try Kerygma?</h2>
+                <p>Download the installer, run it, and Kerygma handles the rest — model downloads, configuration, everything.</p>
+                <div class="download-requirements">
+                    <h4>System Requirements</h4>
+                    <ul>
+                        <li>Windows 10 or later (64-bit)</li>
+                        <li>8 GB RAM minimum (16 GB recommended)</li>
+                        <li>NVIDIA GPU recommended (CUDA support for faster processing)</li>
+                        <li>~4 GB disk space (including AI models)</li>
+                        <li>Microphone or audio input device</li>
+                    </ul>
+                </div>
+                <div class="download-actions">
+                    <a href="https://github.com/ukonuzoidx/kerygma-landing-page/releases" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download Kerygma v2.0
+                    </a>
+                    <a href="https://github.com/ukonuzoidx/kerygma-landing-page" class="btn btn-ghost btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">✝</span> Kerygma
+                <p>Real-time AI scripture detection for live sermons.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/ukonuzoidx/kerygma-landing-page">GitHub</a>
+                <a href="https://github.com/ukonuzoidx/kerygma-landing-page/issues">Report a Bug</a>
+                <a href="https://github.com/ukonuzoidx/kerygma-landing-page/releases">Releases</a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 Kerygma. Free and open source.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
